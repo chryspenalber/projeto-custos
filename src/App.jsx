@@ -1,5 +1,12 @@
+import MonthSummary from './sections/MonthSummary/MonthSummary';
+
 function App() {
-  return <h1>Custos da casa</h1>;
+  return (
+    <main>
+      <h1>Custos da casa</h1>
+      <MonthSummary />
+    </main>
+  );
 }
 
 export default App;
