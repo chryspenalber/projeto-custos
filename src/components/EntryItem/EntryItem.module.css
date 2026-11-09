@@ -1,0 +1,36 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.categoria {
+  margin: 0;
+  font-weight: 600;
+}
+
+.tipo {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-destaque);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nota {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+}
+
+.valor {
+  font-family: var(--fonte-mono);
+  font-weight: 500;
+  white-space: nowrap;
+}
