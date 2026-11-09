@@ -1,0 +1,23 @@
+:root {
+  --cor-fundo: #faf5f4;
+  --cor-texto: #47594c;
+  --cor-destaque: #8c6542;
+  --cor-borda: #788c77;
+  --cor-erro: #b3261e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #161d19;
+    --cor-texto: #d9c1bf;
+    --cor-destaque: #788c77;
+    --cor-borda: #47594c;
+    --cor-erro: #f2b8b5;
+    color-scheme: dark;
+  }
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}

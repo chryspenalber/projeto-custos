@@ -5,7 +5,7 @@ import SummaryCard from '../../components/SummaryCard/SummaryCard';
 import styles from './MonthSummary.module.css';
 
 // Mês fixo por enquanto: a escolha do mês entra na etapa 7
-const MES = '2026-10';
+const MES = '2026-11';
 
 function MonthSummary() {
   const resumo = calculaResumo(MES, lancamentos, categorias);
