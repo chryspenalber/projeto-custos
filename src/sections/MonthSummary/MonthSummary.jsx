@@ -1,6 +1,7 @@
 import { categorias } from '../../data/categorias';
 import { lancamentos } from '../../data/lancamentos';
 import { calculaResumo } from '../../utils/calculaResumo';
+import { formataMes } from '../../utils/formataMes';
 import SummaryCard from '../../components/SummaryCard/SummaryCard';
 import styles from './MonthSummary.module.css';
 
@@ -12,7 +13,7 @@ function MonthSummary() {
 
   return (
     <section>
-      <h2>{MES}</h2>
+      <h2>{formataMes(MES)}</h2>
       <dl className={styles.cards}>
         <SummaryCard rotulo="Despesas" valor={resumo.despesas} />
         <SummaryCard rotulo="Custo p/ cada" valor={resumo.custoPorPessoa} />
