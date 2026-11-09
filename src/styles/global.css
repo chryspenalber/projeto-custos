@@ -4,6 +4,10 @@
   --cor-destaque: #8c6542;
   --cor-borda: #788c77;
   --cor-erro: #b3261e;
+
+  --fonte-titulo: 'Fraunces', serif;
+  --fonte-texto: 'Montserrat', sans-serif;
+  --fonte-mono: 'JetBrains Mono', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,4 +24,13 @@
 body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1.1;
 }
