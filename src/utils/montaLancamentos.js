@@ -7,7 +7,7 @@ export function montaLancamentos(mes, lancamentos, categorias) {
     );
 
     // O tipo não é guardado: sai da categoria e do sinal do valor
-    let tipo = '';
+    let tipo;
     if (categoria.tipo === 'receita') {
       tipo = 'Receita';
     } else if (lancamento.valor >= 0) {
