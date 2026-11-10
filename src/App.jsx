@@ -1,4 +1,5 @@
 import MonthSummary from './sections/MonthSummary/MonthSummary';
+import EntryList from './sections/EntryList/EntryList';
 
 // Mês fixo por enquanto: a escolha do mês entra na etapa 7
 const MES = '2026-11';
@@ -8,6 +9,7 @@ function App() {
     <main>
       <h1>Custos da casa</h1>
       <MonthSummary mes={MES} />
+      <EntryList mes={MES} />
     </main>
   );
 }
