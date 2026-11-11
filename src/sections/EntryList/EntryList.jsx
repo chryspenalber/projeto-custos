@@ -1,10 +1,8 @@
-import { categorias } from '../../data/categorias';
-import { lancamentos } from '../../data/lancamentos';
 import { montaLancamentos } from '../../utils/montaLancamentos';
 import EntryItem from '../../components/EntryItem/EntryItem';
 import styles from './EntryList.module.css';
 
-function EntryList({ mes }) {
+function EntryList({ mes, lancamentos, categorias }) {
   const doMes = montaLancamentos(mes, lancamentos, categorias);
 
   return (

@@ -1,11 +1,9 @@
-import { categorias } from '../../data/categorias';
-import { lancamentos } from '../../data/lancamentos';
 import { calculaResumo } from '../../utils/calculaResumo';
 import { formataMes } from '../../utils/formataMes';
 import SummaryCard from '../../components/SummaryCard/SummaryCard';
 import styles from './MonthSummary.module.css';
 
-function MonthSummary({ mes }) {
+function MonthSummary({ mes, lancamentos, categorias }) {
   const resumo = calculaResumo(mes, lancamentos, categorias);
 
   return (
