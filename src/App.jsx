@@ -3,6 +3,7 @@ import { lancamentos as lancamentosIniciais } from './data/lancamentos';
 import { categorias } from './data/categorias';
 import MonthSummary from './sections/MonthSummary/MonthSummary';
 import EntryList from './sections/EntryList/EntryList';
+import EntryForm from './sections/EntryForm/EntryForm';
 
 // Mês fixo inicialmente
 const MES = '2026-11';
@@ -18,6 +19,7 @@ function App() {
         lancamentos={lancamentos}
         categorias={categorias}
       />
+      <EntryForm categorias={categorias} />
       <EntryList mes={MES} lancamentos={lancamentos} categorias={categorias} />
     </main>
   );
