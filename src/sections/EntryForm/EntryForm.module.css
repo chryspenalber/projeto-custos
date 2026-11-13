@@ -1,0 +1,55 @@
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.grupo {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Rótulo em cima do campo */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rotulo {
+  padding: 0;
+  color: var(--cor-destaque);
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Os três tipos lado a lado, quebrando linha se faltar espaço */
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.opcao input {
+  margin: 0;
+  accent-color: var(--cor-destaque);
+}
+
+/* Campos de formulário não herdam a fonte da página */
+.controle {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--cor-borda-campo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font: inherit;
+}

@@ -4,6 +4,7 @@
   --cor-destaque: #8c6542;
   --cor-borda: #788c77;
   --cor-erro: #b3261e;
+  --cor-borda-campo: #788c77;
 
   --fonte-titulo: 'Fraunces', serif;
   --fonte-texto: 'Montserrat', sans-serif;
@@ -33,4 +34,10 @@ h2 {
   font-family: var(--fonte-titulo);
   font-weight: 600;
   line-height: 1.1;
+}
+
+/* Contorno visível ao navegar pelo teclado */
+:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
 }
