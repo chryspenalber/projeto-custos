@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import styles from './EntryForm.module.css';
 
+function tipoDeCategoria(tipo) {
+  return tipo === 'receita' ? 'receita' : 'despesa';
+}
+
 function EntryForm({ categorias }) {
   const [campos, setCampos] = useState({
     tipo: 'custo',
@@ -11,8 +15,21 @@ function EntryForm({ categorias }) {
 
   function handleChange(evento) {
     const { name, value } = evento.target;
-    setCampos({ ...campos, [name]: value });
+
+    if (
+      name === 'tipo' &&
+      tipoDeCategoria(value) !== tipoDeCategoria(campos.tipo)
+    ) {
+      setCampos({ ...campos, tipo: value, categoriaId: '' });
+    } else {
+      setCampos({ ...campos, [name]: value });
+    }
   }
+
+  const categoriasDoTipo = categorias.filter(
+    (categoria) =>
+      categoria.tipo === tipoDeCategoria(campos.tipo) && categoria.ativa,
+  );
 
   return (
     <section>
@@ -72,7 +89,7 @@ function EntryForm({ categorias }) {
             onChange={handleChange}
           >
             <option value="">Escolha uma categoria</option>
-            {categorias.map((categoria) => (
+            {categoriasDoTipo.map((categoria) => (
               <option key={categoria.id} value={categoria.id}>
                 {categoria.nome}
               </option>
