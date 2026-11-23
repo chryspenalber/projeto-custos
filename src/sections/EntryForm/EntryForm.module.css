@@ -53,3 +53,16 @@
   color: var(--cor-texto);
   font: inherit;
 }
+
+.botao {
+  align-self: flex-start;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--cor-destaque);
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font-family: var(--fonte-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}

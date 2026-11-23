@@ -26,6 +26,10 @@ function EntryForm({ categorias }) {
     }
   }
 
+  function handleSubmit(evento) {
+    evento.preventDefault();
+  }
+
   const categoriasDoTipo = categorias.filter(
     (categoria) =>
       categoria.tipo === tipoDeCategoria(campos.tipo) && categoria.ativa,
@@ -35,7 +39,7 @@ function EntryForm({ categorias }) {
     <section>
       <h2>Novo lançamento</h2>
 
-      <div className={styles.campos}>
+      <form className={styles.campos} onSubmit={handleSubmit}>
         <fieldset className={styles.grupo}>
           <legend className={styles.rotulo}>Tipo</legend>
           <div className={styles.opcoes}>
@@ -125,7 +129,11 @@ function EntryForm({ categorias }) {
             onChange={handleChange}
           />
         </div>
-      </div>
+        
+        <button type="submit" className={styles.botao}>
+          Adicionar
+        </button>
+      </form>
     </section>
   );
 }
