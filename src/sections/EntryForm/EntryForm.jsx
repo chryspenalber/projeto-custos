@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { leValorDigitado } from '../../utils/leValorDigitado';
 import styles from './EntryForm.module.css';
 
 function tipoDeCategoria(tipo) {
@@ -12,6 +13,8 @@ function EntryForm({ categorias }) {
     valor: '',
     nota: '',
   });
+
+  const [erro, setErro] = useState('');
 
   function handleChange(evento) {
     const { name, value } = evento.target;
@@ -28,6 +31,20 @@ function EntryForm({ categorias }) {
 
   function handleSubmit(evento) {
     evento.preventDefault();
+
+    if (campos.categoriaId === '') {
+      setErro('Escolha uma categoria.');
+      return;
+    }
+
+    const valor = leValorDigitado(campos.valor);
+
+    if (Number.isNaN(valor) || valor <= 0) {
+      setErro('Digite um valor maior que zero.');
+      return;
+    }
+
+    setErro('');
   }
 
   const categoriasDoTipo = categorias.filter(
@@ -129,10 +146,15 @@ function EntryForm({ categorias }) {
             onChange={handleChange}
           />
         </div>
-        
+
         <button type="submit" className={styles.botao}>
           Adicionar
         </button>
+        {erro && (
+          <p className={styles.erro} role="alert">
+            {erro}
+          </p>
+        )}
       </form>
     </section>
   );

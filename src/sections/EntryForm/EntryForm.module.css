@@ -66,3 +66,9 @@
   letter-spacing: 0.1em;
   cursor: pointer;
 }
+
+.erro {
+  margin: 0;
+  color: var(--cor-erro);
+  font-size: 0.875rem;
+}
