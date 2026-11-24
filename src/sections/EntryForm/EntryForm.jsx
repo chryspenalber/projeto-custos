@@ -6,7 +6,7 @@ function tipoDeCategoria(tipo) {
   return tipo === 'receita' ? 'receita' : 'despesa';
 }
 
-function EntryForm({ categorias }) {
+function EntryForm({ mes, categorias, aoAdicionar }) {
   const [campos, setCampos] = useState({
     tipo: 'custo',
     categoriaId: '',
@@ -45,6 +45,16 @@ function EntryForm({ categorias }) {
     }
 
     setErro('');
+
+    const novoLancamento = {
+      id: String(Date.now()),
+      mes,
+      categoriaId: campos.categoriaId,
+      valor: campos.tipo === 'reembolso' ? -valor : valor,
+      nota: campos.nota,
+    };
+
+    aoAdicionar(novoLancamento);
   }
 
   const categoriasDoTipo = categorias.filter(

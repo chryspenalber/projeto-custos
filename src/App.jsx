@@ -9,7 +9,11 @@ import EntryForm from './sections/EntryForm/EntryForm';
 const MES = '2026-11';
 
 function App() {
-  const [lancamentos] = useState(lancamentosIniciais);
+  const [lancamentos, setLancamentos] = useState(lancamentosIniciais);
+
+  function adicionaLancamento(novoLancamento) {
+    setLancamentos([...lancamentos, novoLancamento]);
+  }
 
   return (
     <main>
@@ -19,7 +23,11 @@ function App() {
         lancamentos={lancamentos}
         categorias={categorias}
       />
-      <EntryForm categorias={categorias} />
+      <EntryForm
+        mes={MES}
+        categorias={categorias}
+        aoAdicionar={adicionaLancamento}
+      />
       <EntryList mes={MES} lancamentos={lancamentos} categorias={categorias} />
     </main>
   );
